@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+	
+	<meta charset="utf-8">
+	
+</head>
+
+<body>
+
+<textarea cols="50" rows="5" id="textToMorseCode" onchange="toMorseCode();" placeholder="Type here text to get Morse Code"></textarea><br>
+<button onclick="toMorseCode();">Click to translate</button><br>
+<textarea cols="50" rows="10" id="outputMorseCode" placeholder="output Morse Code"></textarea><br>
+
+<br><br>
+
+<textarea cols="50" rows="5" id="morseCodeToText" onchange="toText();" placeholder="Type here Morse Code to get text"></textarea><br>
+<button onclick="toText();">Click to translate</button><br>
+<textarea cols="50" rows="10" id="outputText" placeholder="output text"></textarea><br>
+
+<script src="morseCodes.js"></script>
+<script src="textToMorseCode.js"></script>
+<script src="morseCodeToText.js"></script>
+
+</body>
+
+</html>
