@@ -1,11 +1,11 @@
-var textareaMorseCodeToText = document.getElementById("morseCodeToText");
+var textareaMorseCodeToText = document.getElementById("inputMorseCodeToText");
 var outputText = document.getElementById("outputText");
 
-function searchCharacterFromMorseCode(morseCode){
+function returnCharacterFromMorseCode(morseCode){
 	var character = "";
 	for(var i in codes){
 		if(morseCode==codes[i].code){
-			character=codes[i].character;
+			character=i;
 		}
 	}
 	return character;
@@ -19,18 +19,21 @@ function translateFromMorseCodeToText(morseCode){
 			morseCodeContainer+=morseCode.charAt(i);
 		}
 		else{
-			output+=searchCharacterFromMorseCode(morseCodeContainer);
+			output+=returnCharacterFromMorseCode(morseCodeContainer);
 			morseCodeContainer="";
 			if(morseCode.charAt(i+1)==" "){
 				output+=" ";
 			}
 		}
+
+		if(i==(morseCode.length-1)){
+			output+=returnCharacterFromMorseCode(morseCodeContainer);
+		}
 	}
-	output+=searchCharacterFromMorseCode(morseCodeContainer);
 	return output;
 }
 
-function toText(){
+function fromMorseCodeToText(){
 	var morseCodeFromTextarea = textareaMorseCodeToText.value;
 	var morseCodeWithDashes = morseCodeFromTextarea.replace(/_/g, "-");
 	var translated = translateFromMorseCodeToText(textareaMorseCodeToText.value);

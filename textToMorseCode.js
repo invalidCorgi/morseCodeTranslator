@@ -1,4 +1,4 @@
-var textareaTextToMorseCode = document.getElementById("textToMorseCode");
+var textareaTextToMorseCode = document.getElementById("inputTextToMorseCode");
 var textareaOutputMorseCode = document.getElementById("outputMorseCode");
 
 function translateFromTextToMorseCode(text){
@@ -17,7 +17,7 @@ function translateFromTextToMorseCode(text){
 	return output;
 }
 
-function toMorseCode(){
+function fromTextToMorseCode(){
 	var translated = translateFromTextToMorseCode(textareaTextToMorseCode.value.toLowerCase());
 	textareaOutputMorseCode.value = translated;
 }
